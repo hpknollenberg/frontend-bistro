@@ -23,7 +23,7 @@ function Menu() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Dropdown as={NavItem}>
-              <Dropdown.Toggle className={`border-0 p-0 ps-2 pt-1 pb-1 pe-1`}
+              <Dropdown.Toggle className={`border-0 ps-2 pt-1 pb-1 pe-1`}
                 style={{...styles.header, ...styles.background}}>Menu</Dropdown.Toggle>
               <Dropdown.Menu className="border-0" style={{...styles.background}}>
                 <Dropdown.Item as={Link} className={`ps-4`}
@@ -40,8 +40,10 @@ function Menu() {
                   to="/drinks" style={{...styles.header}}>Drinks<br></br></Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
-            <NavLink className={`ps-2 pt-1 pb-1`}
-                  to="/contact" style={{...styles.header}}>Contact<br></br></NavLink>      
+            <NavLink className={`ps-2 pt-1 pb-1 pe-1`}
+                  to="/contact" style={{...styles.header}}>Contact<br></br></NavLink>     
+            <NavLink className={`ps-2 pt-1 pb-1 pe-1`}
+                  to="/cart" style={{...styles.header}}>Cart<br></br></NavLink>   
           </Nav>
         </Navbar.Collapse>
     </Navbar>
