@@ -25,10 +25,10 @@ function Drinks() {
 
 
   useEffect(() => {
-    axios.get(`https://raw.githubusercontent.com/bootcamp-students/random-restaurant-json/main/foodList.json`)
+    axios.get(`http://127.0.0.1:8000/menu_items/`)
     .then(response => {
       setMenu(response.data)
-      setDrinks(response.data.filter((x) => x.category === "Drink").map((food) => {
+      setDrinks(response.data.filter((x) => x.category === "Drinks").map((food) => {
         return (
           <div key={food.id} style={{...styles.items}} className="row">
             <h3 className="">{food.title}</h3>

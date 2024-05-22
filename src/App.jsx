@@ -31,10 +31,10 @@ function App() {
 
 
   useEffect(() => {
-    axios.get(`https://raw.githubusercontent.com/bootcamp-students/random-restaurant-json/main/foodList.json`) //fetching from the api
+    axios.get(`http://127.0.0.1:8000/menu_items/`) //fetching from the api
     .then(response => {
       setMenu(response.data)
-      setAppetizers(response.data.filter((x) => x.category === "Appetizer").map((food) => { //filters appetizers (or whatever-vvv)
+      setAppetizers(response.data.filter((x) => x.category === "Appetizers").map((food) => { //filters appetizers (or whatever-vvv)
         return (
           <div key={food.id} style={{...styles.items}} className="row"> {/*Displays food item title, description, and price*/}
             <h3 className="">{food.title}</h3>
@@ -70,7 +70,7 @@ function App() {
           </div>
         )
       }))
-      setDrinks(response.data.filter((x) => x.category === "Drink").map((food) => {
+      setDrinks(response.data.filter((x) => x.category === "Drinks").map((food) => {
         return (
           <div key={food.id} style={{...styles.items}} className="row">
             <h3 className="">{food.title}</h3>
@@ -80,7 +80,7 @@ function App() {
         )
       }))
   }
-  )})
+  )}, [])
 
 
 
