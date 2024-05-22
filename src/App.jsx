@@ -28,7 +28,17 @@ function App() {
   const [breakfast, setBreakfast] = useState([]);
   const [lunch, setLunch] = useState([]);
   
+  let tempCart = JSON.parse(localStorage.getItem("cart"))
 
+  const [cart, setCart] = useState(tempCart ? tempCart : [])
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart))
+  }, [cart])
+  
+  function addToCart(id, title, description, price) {
+    setCart(cart => [...cart, {id: id, title: title, description: description, price: price}])
+  }
 
   useEffect(() => {
     axios.get(`http://127.0.0.1:8000/menu_items/`) //fetching from the api
@@ -38,8 +48,10 @@ function App() {
         return (
           <div key={food.id} style={{...styles.items}} className="row"> {/*Displays food item title, description, and price*/}
             <h3 className="">{food.title}</h3>
-            <p className="col-10">{food.description}</p>
+            <p className="col-9">{food.description}</p>
             <p className="col-2">{food.price}</p>
+            <button className="col-1" title="Add To Cart" onClick={() => { addToCart(food.id, food.title, food.description, food.price) }}
+              >Add To Cart</button>
           </div>
         )
       }))
@@ -47,8 +59,10 @@ function App() {
         return (
           <div key={food.id} style={{...styles.items}} className="row">
             <h3 className="">{food.title}</h3>
-            <p className="col-10">{food.description}</p>
+            <p className="col-9">{food.description}</p>
             <p className="col-2">{food.price}</p>
+            <button className="col-1" title="Add To Cart" onClick={() => { addToCart(food.id, food.title, food.description, food.price) }}
+              >Add To Cart</button>
           </div>
         )
       }))
@@ -56,8 +70,10 @@ function App() {
         return (
           <div key={food.id} style={{...styles.items}} className="row">
             <h3 className="">{food.title}</h3>
-            <p className="col-10">{food.description}</p>
+            <p className="col-9">{food.description}</p>
             <p className="col-2">{food.price}</p>
+            <button className="col-1" title="Add To Cart" onClick={() => { addToCart(food.id, food.title, food.description, food.price) }}
+              >Add To Cart</button>
           </div>
         )
       }))
@@ -65,8 +81,10 @@ function App() {
         return (
           <div key={food.id} style={{...styles.items}} className="row">
             <h3 className="">{food.title}</h3>
-            <p className="col-10">{food.description}</p>
+            <p className="col-9">{food.description}</p>
             <p className="col-2">{food.price}</p>
+            <button className="col-1" title="Add To Cart" onClick={() => { addToCart(food.id, food.title, food.description, food.price) }}
+              >Add To Cart</button>
           </div>
         )
       }))
@@ -74,8 +92,10 @@ function App() {
         return (
           <div key={food.id} style={{...styles.items}} className="row">
             <h3 className="">{food.title}</h3>
-            <p className="col-10">{food.description}</p>
+            <p className="col-9">{food.description}</p>
             <p className="col-2">{food.price}</p>
+            <button className="col-1" title="Add To Cart" onClick={() => { addToCart(food.id, food.title, food.description, food.price) }}
+              >Add To Cart</button>
           </div>
         )
       }))

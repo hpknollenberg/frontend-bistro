@@ -21,6 +21,7 @@ import Dinner from './Dinner'
 import Breakfast from './Breakfast'
 import Lunch from './Lunch'
 import Contact from './Contact'
+import Cart from './Cart'
 
 
 
@@ -74,6 +75,10 @@ const router = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact />
+      },
+      {
+        path: '/cart',
+        element: <Cart />
       }
     ]
   }
