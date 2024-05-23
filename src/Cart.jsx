@@ -13,6 +13,9 @@ const styles = {
     paddingBottom: '1vh',
     paddingTop: '5vh',
     textShadow: '2px 2px rgb(150, 197, 247'
+  },
+  buttons: {
+    boxShadow: '2px 2px rgb(150, 197, 247'
   }
 }
 
@@ -39,7 +42,7 @@ function Contact() {
             <h3 className="">{food.title}</h3>
             <p className="col-9">{food.description}</p>
             <p className="col-2">{food.price}</p>
-            <button className="col-1" title="Delete From Cart" onClick={() => { deleteFromCart(food.id) }}
+            <button className="col-3 col-md-1 ms-2 ms-md-0 mb-5" style={{...styles.buttons}} title="Delete From Cart" onClick={() => { deleteFromCart(food.id) }}
               >Delete From Cart</button>
           </div>
         ))
