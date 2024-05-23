@@ -15,6 +15,9 @@ const styles = {
     paddingTop: '5vh',
     textShadow: '2px 2px rgb(150, 197, 247'
   },
+  buttons: {
+    boxShadow: '2px 2px rgb(150, 197, 247'
+  }
 }
 
 
@@ -37,6 +40,9 @@ function App() {
   }, [cart])
   
   function addToCart(id, title, description, price) {
+    setCart((cart) => {
+      return cart.filter((food) => food.id !== id)
+    })
     setCart(cart => [...cart, {id: id, title: title, description: description, price: price}])
   }
 
@@ -50,7 +56,7 @@ function App() {
             <h3 className="">{food.title}</h3>
             <p className="col-9">{food.description}</p>
             <p className="col-2">{food.price}</p>
-            <button className="col-1" title="Add To Cart" onClick={() => { addToCart(food.id, food.title, food.description, food.price) }}
+            <button className="col-3 col-md-1 ms-2 ms-md-0 mb-5" style={{...styles.buttons}} title="Add To Cart" onClick={() => { addToCart(food.id, food.title, food.description, food.price) }}
               >Add To Cart</button>
           </div>
         )
@@ -61,7 +67,7 @@ function App() {
             <h3 className="">{food.title}</h3>
             <p className="col-9">{food.description}</p>
             <p className="col-2">{food.price}</p>
-            <button className="col-1" title="Add To Cart" onClick={() => { addToCart(food.id, food.title, food.description, food.price) }}
+            <button className="col-3 col-md-1 ms-2 ms-md-0 mb-5" style={{...styles.buttons}} title="Add To Cart" onClick={() => { addToCart(food.id, food.title, food.description, food.price) }}
               >Add To Cart</button>
           </div>
         )
@@ -72,7 +78,7 @@ function App() {
             <h3 className="">{food.title}</h3>
             <p className="col-9">{food.description}</p>
             <p className="col-2">{food.price}</p>
-            <button className="col-1" title="Add To Cart" onClick={() => { addToCart(food.id, food.title, food.description, food.price) }}
+            <button className="col-3 col-md-1 ms-2 ms-md-0 mb-5" style={{...styles.buttons}} title="Add To Cart" onClick={() => { addToCart(food.id, food.title, food.description, food.price) }}
               >Add To Cart</button>
           </div>
         )
@@ -83,7 +89,7 @@ function App() {
             <h3 className="">{food.title}</h3>
             <p className="col-9">{food.description}</p>
             <p className="col-2">{food.price}</p>
-            <button className="col-1" title="Add To Cart" onClick={() => { addToCart(food.id, food.title, food.description, food.price) }}
+            <button className="col-3 col-md-1 ms-2 ms-md-0 mb-5" style={{...styles.buttons}} title="Add To Cart" onClick={() => { addToCart(food.id, food.title, food.description, food.price) }}
               >Add To Cart</button>
           </div>
         )
@@ -94,7 +100,7 @@ function App() {
             <h3 className="">{food.title}</h3>
             <p className="col-9">{food.description}</p>
             <p className="col-2">{food.price}</p>
-            <button className="col-1" title="Add To Cart" onClick={() => { addToCart(food.id, food.title, food.description, food.price) }}
+            <button className="col-3 col-md-1 ms-2 ms-md-0 mb-5" style={{...styles.buttons}} title="Add To Cart" onClick={() => { addToCart(food.id, food.title, food.description, food.price) }}
               >Add To Cart</button>
           </div>
         )
